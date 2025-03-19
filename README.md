@@ -12,9 +12,11 @@ Connor Reynolds<sub>1</sub>, Joshua Colmer<sub>1</sub>, Hannah Rees<sub>2</sub>,
 DOI: [10.1101/2024.10.28.620591](https://www.biorxiv.org/content/10.1101/2024.10.28.620591v1)
 
 ## Overview
-This repository in an extention of [ChronoGauge](https://github.com/ConnorReynoldsUK/ChronoGauge) and includes work related specifically to the application of our ensemble models (trained using _A. thaliana_ expression) to non-model species for circadian time (CT) prediction.
+This repository is an extention of [ChronoGauge](https://github.com/ConnorReynoldsUK/ChronoGauge) and includes work related specifically to the application of our ensemble models (trained using _A. thaliana_ expression) to non-model species for circadian time (CT) prediction.
 
-We preface by stating that applying ChronoGauge across different species (after training exclusively in _A. thaliana_) is not expected to give as reliable predicted compared with training & testing on the same species. We also note that it is required that non-model species include samples from least 2 time-points that were harvested ~12 hours apart.
+We preface by stating that applying ChronoGauge across different species (after training exclusively in _A. thaliana_) is not expected to give as reliable predicted compared with training & testing on the same species. 
+
+We also note that it is required that non-model species include samples from least 2 time-points that were harvested ~12 hours apart.
  
 
 ## Installation
@@ -40,7 +42,9 @@ conda activate chronogauge_alma
 ```
 
 ## Ortholog mapping
-Since gene features do not correspond across species, it is required to identify and select genes in the test species which are orthologous to gene features used by the training species. The script `map_orthologs.py` can be used for this mapping. For example, _A. thaliana_ is used as a training species and wheat is used as a test species:
+Since gene features do not correspond across species, it is required to identify and select genes in the test species which are orthologous to gene features used by the training species. 
+
+The script `map_orthologs.py` can be used for this mapping. For example, _A. thaliana_ is used as a training species and wheat is used as a test species:
 
 ```
 python map_orthologs.py  --species_name wheat --ortholog_list data/ortholog_lists/wheat_ortholog_list.csv --x_test data/original_exp_matrices/original_wheat_exp.csv --target_test data/targets/target_wheat.csv
@@ -52,7 +56,9 @@ The ortholog gene mapper takes:
 3. OPTIONAL a .csv file containing the sampling times for the test species (e.g. `data/targets/target_wheat.csv`)
 
 
-This script will identify and map genes from the non-model species to orthologous A. thaliana genes. Where multiple non-model species genes map to a single A. thaliana gene, we take the average of their expression. The output is a gene expression matrix for the non-model species with all genes being replace by A. thaliana orthologs.
+This script will identify and map genes from the non-model species to orthologous A. thaliana genes. Where multiple non-model species genes map to a single A. thaliana gene, we take the average of their expression. 
+
+The output is a gene expression matrix for the non-model species with all genes being replace by A. thaliana orthologs.
 
 ## Model training and testing across species
 To train and test models across species with a specified feature sets, we provide the script `train_model_xspecies.py`. By default, the script will train a model using 17 cannonical circadain clock genes as features.
@@ -72,7 +78,9 @@ for i in {0..10};
 do python train_model_xspecies.py --xtest data/ortholog_exp_matrices/X_wheat_orth.csv --target_test data/targets/target_wheat.csv --experiment_name wheat --model_id $1
 done
 ```
-Each script should take ~ 1 minute to complete. To analyze the results of multiple models as an ensemble, we refer to the [Jupyter notebook for ensemble aggregation](https://github.com/ConnorReynoldsUK/ChronoGauge/blob/main/notebooks/example_ensemble_aggregation.ipynb) found within the original ChronoGauge repository.
+Each script should take ~ 1 minute to complete. The CT estimates will be deposited into a results directory - by default this will be `results/test_results`.
+
+To analyze the results of multiple models as an ensemble, we refer to the [Jupyter notebook for ensemble aggregation](https://github.com/ConnorReynoldsUK/ChronoGauge/blob/main/notebooks/example_ensemble_aggregation.ipynb) found within the original ChronoGauge repository.
 
 ## Datasets
 The following datasets are included in this repository:
