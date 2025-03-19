@@ -43,7 +43,7 @@ conda activate chronogauge_alma
 Since gene features do not correspond across species, it is required to identify and select genes in the test species which are orthologous to gene features used by the training species. The script `map_orthologs.py` can be used for this mapping. For example, _A. thaliana_ is used as a training species and wheat is used as a test species:
 
 ```
-python3 map_orthologs.py  --species_name wheat --ortholog_list data/ortholog_lists/wheat_ortholog_list.csv --x_test data/original_exp_matrices/original_wheat_exp.csv --target_test data/targets/target_wheat.csv
+python map_orthologs.py  --species_name wheat --ortholog_list data/ortholog_lists/wheat_ortholog_list.csv --x_test data/original_exp_matrices/original_wheat_exp.csv --target_test data/targets/target_wheat.csv
 ```
 
 The ortholog gene mapper takes:
@@ -60,7 +60,7 @@ To train and test models across species with a specified feature sets, we provid
 For example, the script can be run using the following command to train a model in _A. thaliana_ and test it in wheat using a model ID of 0:
 
 ```
-python3 train_model_xspecies.py --x_test data/ortholog_exp_matrices/X_wheat_orth.csv --target_test data/targets/target_wheat.csv --experiment_name wheat --model_id 0
+python train_model_xspecies.py --x_test data/ortholog_exp_matrices/X_wheat_orth.csv --target_test data/targets/target_wheat.csv --experiment_name wheat --model_id 0
 ```
 Where the parameter `--x_test` requires an expression matrix of the test species with ortholog genes mapped and replaced with _A. thaliana_, as described previously.
 
