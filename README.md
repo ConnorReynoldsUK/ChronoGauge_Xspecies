@@ -58,7 +58,7 @@ The ortholog gene mapper takes:
 
 This script will identify and map genes from the non-model species to orthologous A. thaliana genes. Where multiple non-model species genes map to a single A. thaliana gene, we take the average of their expression. 
 
-The output is a gene expression matrix for the non-model species with all genes being replace by A. thaliana orthologs.
+The output is a gene expression matrix for the non-model species with all genes being replace by _A. thaliana_ orthologs.
 
 ## Model training and testing across species
 To train and test models across species with a specified feature sets, we provide the script `train_model_xspecies.py`. By default, the script will train a model using 17 cannonical circadain clock genes as features.
@@ -88,7 +88,7 @@ The following datasets are included in this repository:
 * _Glycine max_ (soybean) expression data from circadian experiment by _Li et al._[4]
 * _Brassica rapa_ expression data from circadian experiment by _Greenham et al._[5]
 * _Arabidopsis halleri_ expression data from wild samples by _Nagano et al._[6] and _Honjo et al._[7]
-* _Triticum aestivum_ (wheat) expression data from circadian experiment by _Rees et al.[8]
+* _Triticum aestivum_ (wheat) expression data from circadian experiment by _Rees et al._[8]
 
 
 ## References
