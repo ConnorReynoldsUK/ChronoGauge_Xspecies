@@ -14,7 +14,7 @@ DOI: [10.1101/2024.10.28.620591](https://www.biorxiv.org/content/10.1101/2024.10
 ## Overview
 This repository is an extention of [ChronoGauge](https://github.com/ConnorReynoldsUK/ChronoGauge) and includes work related specifically to the application of our ensemble models (trained using _A. thaliana_ expression) to non-model species for circadian time (CT) prediction.
 
-We preface by stating that applying ChronoGauge across different species (after training exclusively in _A. thaliana_) is not expected to give as reliable predicted compared with training & testing on the same species. 
+We preface by stating that applying ChronoGauge across different species (after training exclusively in _A. thaliana_) is not expected to give as reliable predictions compared with training & testing on the same species. 
 
 We also note that it is required that non-model species include samples from least 2 time-points that were harvested ~12 hours apart.
  
@@ -99,4 +99,4 @@ The following datasets are included in this repository:
 5. Greenham, K., Sartor, R. C., Zorich, S., Lou, P., Mockler, T. C. & McClung, C. R. Expansion of the circadian transcriptome in Brassica rapa and genome-wide diversification of paralog expression patterns. eLife 9, e58993 (2020).
 6. Nagano, A. J., Kawagoe, T., Sugisaka, J., Honjo, M. N., Iwayama, K. & Kudoh, H. Annual transcriptome dynamics in natural environments reveals plant seasonal adaptation. Nat. Plants 5, 74–83 (2019).
 7. Honjo, M. N., Emura, N., Kawagoe, T., Sugisaka, J., Kamitani, M., Nagano, A. J. & Kudoh, H. Seasonality of interactions between a plant virus and its host during persistent infection in a natural environment. ISME J. 14, 506–518 (2020).
-8. Rees, H., Joynson, R., Brown, J. K. M. & Hall, A. Naturally occurring circadian rhythm variation associated with clock gene loci in Swedish Arabidopsis accessions. Plant Cell Environ. 44, 807–820 (2021).
+8. Rees, H., Rusholme-Pilcher, R., Bailey, P., Colmer, J., White, B., Reynolds, C., Ward, S. J., Coombes, B., Graham, C. A., Dantas, L. L. de B., Dodd, A. N. & Hall, A. Circadian regulation of the transcriptome in a complex polyploid crop. PLOS Biol. 20, e3001802 (2022).
